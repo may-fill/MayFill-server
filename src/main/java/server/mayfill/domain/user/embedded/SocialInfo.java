@@ -1,9 +1,10 @@
-package server.mayfill.domain.user;
+package server.mayfill.domain.user.embedded;
 
 import lombok.AccessLevel;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import server.mayfill.domain.user.enumerate.SocialType;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
