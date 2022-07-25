@@ -10,9 +10,9 @@ import javax.validation.constraints.NotBlank;
 @Getter
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
-public class LoginRequestDto {
+public class LoginRequest {
 
-    @NotBlank(message = "{auth.token.notBlank}")
+    @NotBlank(message = "{auth.accessToken.notBlank}")
     private String socialToken;
 
     @NotBlank(message = "{auth.socialType.notNull}")
