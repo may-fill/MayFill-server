@@ -8,13 +8,16 @@ import static server.mayfill.common.exception.StatusCode.*;
 
 @Getter
 @RequiredArgsConstructor(access = AccessLevel.PRIVATE)
-public enum ResponseMessage {
+public enum ResponseResult {
 
     // 200 OK
     SUCCESS_OK(OK, ""),
+    OK_RETRIEVE_ONE_STORE(OK, "리필 스테이션을 조회했습니다"),
+    OK_RETRIEVE_ALL_STORE(OK, "모든 리필 스테이션을 조회했습니다"),
 
     // 201 CREATED
     SUCCESS_CREATED(CREATED, ""),
+    SUCCESS_CREATED_REISSUE_TOKEN(CREATED, "토큰이 성공적으로 재발급 되었습니다"),
 
     // 202 ACCEPTED
     SUCCESS_ACCEPTED(ACCEPTED, ""),
@@ -38,19 +41,36 @@ public enum ResponseMessage {
 
     // 404 NOT_FOUND
     NOT_FOUND_EXCEPTION(NOT_FOUND, "존재하지 않습니다"),
+    NOT_FOUND_STORE_EXCEPTION(NOT_FOUND, "해당 리필 스테이션이 존재하지 않습니다"),
     NOT_FOUND_USER_EXCEPTION(NOT_FOUND, "탈퇴하거나 존재하지 않는 유저입니다"),
+
+    // 405 Method Not Allowed
+    METHOD_NOT_ALLOWED_EXCEPTION(METHOD_NOT_ALLOWED, "지원하지 않는 메소드 입니다"),
+
+    // 406 Not Acceptable
+    NOT_ACCEPTABLE_EXCEPTION(NOT_ACCEPTABLE, "Not Acceptable"),
 
     // 409 CONFLICT
     CONFLICT_EXCEPTION(CONFLICT, "이미 존재합니다"),
+
+    // 415 Unsupported Media Type
+    UNSUPPORTED_MEDIA_TYPE_EXCEPTION(UNSUPPORTED_MEDIA_TYPE, "해당하는 미디어 타입을 지원하지 않습니다."),
 
     // 500 INTERNAL_SERVER
     INTERNAL_SERVER_EXCEPTION(INTERNAL_SERVER, "예상치 못한 서버 에러가 발생하였습니다."),
 
     // 502 BAD_GATEWAY
-    BAD_GATEWAY_EXCEPTION(BAD_GATEWAY, "일시적인 에러가 발생하였습니다.\n잠시 후 다시 시도해주세요!"),
+    BAD_GATEWAY_EXCEPTION(BAD_GATEWAY, "일시적인 에러가 발생하였습니다.\n잠시 후 다시 시도해주세요"),
+
+    // 503 Service UnAvailable
+    SERVICE_UNAVAILABLE_EXCEPTION(SERVICE_UNAVAILABLE, "현재 점검 중입니다.\n잠시 후 다시 시도해주세요"),
     ;
 
     private final StatusCode statusCode;
     private final String message;
+
+    public int getStatus() {
+        return statusCode.getStatus();
+    }
 
 }
