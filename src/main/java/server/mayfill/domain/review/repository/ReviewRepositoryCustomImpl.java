@@ -2,7 +2,6 @@ package server.mayfill.domain.review.repository;
 
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import lombok.RequiredArgsConstructor;
-import server.mayfill.domain.review.QReview;
 import server.mayfill.domain.review.Review;
 
 import java.util.List;
@@ -19,6 +18,7 @@ public class ReviewRepositoryCustomImpl implements ReviewRepositoryCustom {
         return query
                 .selectFrom(review)
                 .where(review.store.id.eq(storeId))
+                .orderBy(review.createdAt.desc())
                 .fetch();
     }
 
