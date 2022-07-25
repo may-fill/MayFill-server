@@ -20,10 +20,10 @@ public class ReviewResponse extends AuditingTimeResponse {
         this.comments = comments;
     }
 
-    public static ReviewResponse of(String nickname, Review review) {
+    public static ReviewResponse of(Review review) {
         ReviewResponse response = ReviewResponse.builder()
                 .reviewId(review.getId())
-                .nickname(nickname)
+                .nickname(review.getUser().getNickname())
                 .comments(review.getComments())
                 .build();
         response.setBaseTime(review);
