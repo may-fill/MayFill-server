@@ -1,13 +1,15 @@
-package server.mayfill.service.auth;
+package server.mayfill.service.auth.impl;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import server.mayfill.common.util.HttpHeaderUtils;
+import server.mayfill.common.util.RandomNicknameProviderUtils;
 import server.mayfill.domain.user.User;
 import server.mayfill.domain.user.enumerate.SocialType;
 import server.mayfill.domain.user.repository.UserRepository;
 import server.mayfill.external.client.kakao.KakaoApiClient;
 import server.mayfill.external.client.kakao.dto.KakaoAuthResponse;
+import server.mayfill.service.auth.AuthService;
 import server.mayfill.service.auth.dto.request.LoginDto;
 import server.mayfill.service.user.UserService;
 import server.mayfill.service.user.UserServiceUtils;
@@ -27,7 +29,7 @@ public class KakaoAuthService implements AuthService {
         KakaoAuthResponse response = kakaoApiCaller.getKakaoUserProfile(HttpHeaderUtils.withBearerToken(request.getSocialAccessToken()));
         User user = UserServiceUtils.findUserBySocialIdAndSocialType(userRepository, response.getId(), SOCIAL_TYPE);
         if (user == null) { // 없으면 회원가입
-            userService.registerUser(request.toCreateUserDto(response.getId()));
+            return userService.registerUser(request.toCreateUserDto(response.getId(), RandomNicknameProviderUtils.getRandomNickname()));
         }
         return user;
     }
