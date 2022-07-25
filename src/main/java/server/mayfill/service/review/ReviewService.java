@@ -12,6 +12,7 @@ import server.mayfill.service.review.dto.response.ReviewResponse;
 import server.mayfill.service.user.UserServiceUtils;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -30,6 +31,12 @@ public class ReviewService {
         );
     }
 
-//    public List<ReviewResponse> retrieveReview
+    public List<ReviewResponse> retrieveReview(Long storeId) {
+        StoreServiceUtils.validateNotExistsStore(storeRepository, storeId);
+        return reviewRepository.findAllReviewByStoreId(storeId)
+                .stream()
+                .map(ReviewResponse::of)
+                .collect(Collectors.toList());
+    }
 
 }
