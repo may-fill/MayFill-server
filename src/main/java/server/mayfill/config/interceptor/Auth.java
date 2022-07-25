@@ -1,2 +1,12 @@
-package server.mayfill.config.interceptor;public @interface Auth {
+package server.mayfill.config.interceptor;
+
+import java.lang.annotation.Retention;
+import java.lang.annotation.Target;
+
+import static java.lang.annotation.ElementType.*;
+import static java.lang.annotation.RetentionPolicy.*;
+
+@Target(METHOD)
+@Retention(RUNTIME)
+public @interface Auth {
 }
