@@ -15,6 +15,11 @@ public class CreateTokenService {
     private final JwtUtils jwtProvider;
 
     @Transactional
+    public TokenResponseDto createTokenInfo(Long userId) {
+        return jwtProvider.createTokenByUserId(userId);
+    }
+
+    @Transactional
     public TokenResponseDto reissueToken(TokenRequest request) {
         if (!jwtProvider.validateToken(request.getRefreshToken())) {
             throw new UnAuthorizeException(String.format("리프레시 토큰 (%s) 이 유효하지 않습니다", request.getRefreshToken()));
