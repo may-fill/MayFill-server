@@ -1,4 +1,4 @@
-package server.mayfill.service.home;
+package server.mayfill.service.store;
 
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
