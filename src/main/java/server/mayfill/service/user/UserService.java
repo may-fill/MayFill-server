@@ -19,7 +19,7 @@ public class UserService {
     }
 
     @Transactional
-    public void resign(Long userId) {
+    public void resignUser(Long userId) {
         userRepository.delete(UserServiceUtils.findUserById(userRepository, userId));
     }
 
