@@ -10,7 +10,7 @@ import server.mayfill.common.util.YamlPropertySourceFactory;
 
 @Configuration
 @PropertySource(value = "classpath:application-naver.yml", factory = YamlPropertySourceFactory.class, ignoreResourceNotFound = true)
-public class NaverHeaderConfig {
+public class NaverRequestHeaderConfig {
 
     @Value("${naver.client.id}")
     private String clientId;
