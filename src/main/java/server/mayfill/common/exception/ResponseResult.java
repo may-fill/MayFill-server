@@ -15,11 +15,14 @@ public enum ResponseResult {
     OK_RETRIEVE_ONE_STORE(OK, "리필 스테이션을 조회했습니다"),
     OK_RETRIEVE_ALL_STORE(OK, "모든 리필 스테이션을 조회했습니다"),
     OK_RETRIEVE_STORE_REVIEW(OK, "리필 스테이션의 후기를 조회했습니다"),
+    OK_SEARCH_STORE(OK, "리필 스테이션의 위치를 조회했습니다"),
 
     // 201 CREATED
     SUCCESS_CREATED(CREATED, ""),
     SUCCESS_CREATED_REISSUE_TOKEN(CREATED, "토큰이 성공적으로 재발급 되었습니다"),
     SUCCESS_CREATED_REVIEW_COMMENT(CREATED, "후기가 등록되었습니다"),
+    SUCCESS_CREATED_UPDATE_NICKNAME(CREATED, "닉네임이 수정되었습니다"),
+    SUCCESS_CREATED_STORE(CREATED, "새로운 리필 스테이션이 등록되었습니다"),
 
     // 202 ACCEPTED
     SUCCESS_ACCEPTED(ACCEPTED, ""),
