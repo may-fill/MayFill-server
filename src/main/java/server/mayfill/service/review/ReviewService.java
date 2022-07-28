@@ -6,7 +6,7 @@ import org.springframework.transaction.annotation.Transactional;
 import server.mayfill.domain.review.repository.ReviewRepository;
 import server.mayfill.domain.store.repository.StoreRepository;
 import server.mayfill.domain.user.repository.UserRepository;
-import server.mayfill.service.home.StoreServiceUtils;
+import server.mayfill.service.store.StoreServiceUtils;
 import server.mayfill.service.review.dto.request.AddReviewRequestDto;
 import server.mayfill.service.review.dto.response.ReviewResponse;
 import server.mayfill.service.user.UserServiceUtils;
