@@ -5,7 +5,6 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import server.mayfill.domain.common.AuditingTimeEntity;
-import server.mayfill.domain.store.embedded.Address;
 import server.mayfill.domain.store.embedded.Coordinate;
 
 import javax.persistence.*;
@@ -26,8 +25,7 @@ public class Store extends AuditingTimeEntity {
     @Column(nullable = false)
     private String description;
 
-    @Embedded
-    private Address address;
+    private String address;
 
     @Column(name = "phone_number", nullable = false)
     private String phoneNumber;
@@ -39,7 +37,7 @@ public class Store extends AuditingTimeEntity {
     private Coordinate coordinate;
 
     @Builder(access = AccessLevel.PACKAGE)
-    private Store(String name, String description, Address address, String phoneNumber, String webSite, Coordinate coordinate) {
+    private Store(String name, String description, String address, String phoneNumber, String webSite, Coordinate coordinate) {
         this.name = name;
         this.description = description;
         this.address = address;
@@ -48,7 +46,7 @@ public class Store extends AuditingTimeEntity {
         this.coordinate = coordinate;
     }
 
-    public static Store of(String name, String description, Address address, String phoneNumber, String webSite, Coordinate coordinate) {
+    public static Store newInstance(String name, String description, String address, String phoneNumber, String webSite, Coordinate coordinate) {
         return Store.builder()
                 .name(name)
                 .description(description)
