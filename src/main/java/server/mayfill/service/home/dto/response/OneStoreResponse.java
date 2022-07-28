@@ -29,7 +29,7 @@ public class OneStoreResponse {
         return OneStoreResponse.builder()
                 .storeId(store.getId())
                 .storeName(store.getName())
-                .address(store.getAddress().getJibun() + store.getAddress().getRoad() + store.getAddress().getDetail())
+                .address(store.getAddress())
                 .phoneNumber(store.getPhoneNumber())
                 .webSite(store.getWebSite())
                 .description(store.getDescription())
