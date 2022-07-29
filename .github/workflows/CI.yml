@@ -8,6 +8,7 @@ on:
 
 env:
   S3_BUCKET_NAME: mayfillbucket
+  PROJECT_NAME: mayfill
 
 jobs:
   build:
