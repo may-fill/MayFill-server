@@ -23,6 +23,7 @@ public enum ResponseResult {
     SUCCESS_CREATED_REVIEW_COMMENT(CREATED, "후기가 등록되었습니다"),
     SUCCESS_CREATED_UPDATE_NICKNAME(CREATED, "닉네임이 수정되었습니다"),
     SUCCESS_CREATED_STORE(CREATED, "새로운 리필 스테이션이 등록되었습니다"),
+    SUCCESS_CREATED_CERTIFICATION_POST(CREATED, "새로운 인증 포스트가 등록되었습니다"),
 
     // 202 ACCEPTED
     SUCCESS_ACCEPTED(ACCEPTED, ""),
@@ -43,6 +44,8 @@ public enum ResponseResult {
 
     // 403 FORBIDDEN
     FORBIDDEN_EXCEPTION(FORBIDDEN, "허용하지 않는 요청입니다."),
+    FORBIDDEN_FILE_TYPE_EXCEPTION(BAD_REQUEST, "허용되지 않은 파일 형식입니다"),
+    FORBIDDEN_FILE_NAME_EXCEPTION(BAD_REQUEST, "허용되지 않은 파일 이름입니다"),
 
     // 404 NOT_FOUND
     NOT_FOUND_EXCEPTION(NOT_FOUND, "존재하지 않습니다"),
