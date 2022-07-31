@@ -1,2 +1,4 @@
-package server.mayfill.domain.post.repository;public class PostRepositoryCustom {
+package server.mayfill.domain.post.repository;
+
+public interface PostRepositoryCustom {
 }
