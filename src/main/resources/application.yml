@@ -5,6 +5,7 @@ server:
       charset: UTF-8
       force: true
     context-path: /api
+  address: 172.31.37.135
 
 spring:
   datasource:
