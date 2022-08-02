@@ -14,9 +14,10 @@ import org.springframework.web.bind.MissingRequestValueException;
 import org.springframework.web.bind.ServletRequestBindingException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
 import server.mayfill.common.dto.ApiResponse;
 import server.mayfill.common.exception.custom.MayFillException;
+import springfox.documentation.annotations.ApiIgnore;
 
 import javax.validation.ConstraintViolationException;
 import java.util.Objects;
@@ -26,7 +27,8 @@ import static server.mayfill.common.exception.ResponseResult.*;
 
 
 @Slf4j
-@RestController
+@RestControllerAdvice
+@ApiIgnore
 public class ExceptionControllerAdvice {
 
     /**
