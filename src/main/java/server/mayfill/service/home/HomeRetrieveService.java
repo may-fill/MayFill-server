@@ -6,6 +6,7 @@ import org.springframework.transaction.annotation.Transactional;
 import server.mayfill.domain.store.repository.StoreRepository;
 import server.mayfill.service.home.dto.response.AllStoreResponse;
 import server.mayfill.service.home.dto.response.OneStoreResponse;
+import server.mayfill.service.store.StoreServiceUtils;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -25,6 +26,7 @@ public class HomeRetrieveService {
     }
 
     public OneStoreResponse retrieveOneStore(Long storeId) {
+        StoreServiceUtils.validateNotExistsStore(storeRepository, storeId);
         return OneStoreResponse.of(storeRepository.findStoreByStoreId(storeId));
     }
 
