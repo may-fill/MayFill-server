@@ -19,6 +19,12 @@ public class UserService {
     }
 
     @Transactional
+    public void changeNickname(String newNickname, Long userId) {
+        User user = UserServiceUtils.findUserById(userRepository, userId);
+        user.changeNickname(newNickname);
+    }
+
+    @Transactional
     public void resignUser(Long userId) {
         userRepository.delete(UserServiceUtils.findUserById(userRepository, userId));
     }
