@@ -11,7 +11,7 @@ public class StoreServiceUtils {
 
     public static void validateNotExistsStore(StoreRepository storeRepository, Long storeId) {
         if (!storeRepository.existsById(storeId)) {
-            throw new NotFoundException(String.format("해당하는 리필 스테이션 (%s) 이 존재하지 않습니다", storeId), ResponseResult.NOT_FOUND_EXCEPTION);
+            throw new NotFoundException(String.format("해당하는 리필 스테이션 (%s) 이 존재하지 않습니다", storeId), ResponseResult.NOT_FOUND_STORE_EXCEPTION);
         }
     }
 
