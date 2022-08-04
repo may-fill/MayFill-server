@@ -16,10 +16,10 @@ public class AddPostRequest {
     private String title;
 
     @NotBlank(message = "{post.contents.notBlank}")
-    private String contests;
+    private String comments;
 
     public Post toPostEntity(User user, String imageUrl) {
-        return Post.of(user, imageUrl, title, contests);
+        return Post.of(user, imageUrl, title, comments);
     }
 
 }
