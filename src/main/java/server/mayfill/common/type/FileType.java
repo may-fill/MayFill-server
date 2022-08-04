@@ -12,7 +12,7 @@ import static server.mayfill.common.exception.ResponseResult.*;
 @RequiredArgsConstructor
 public enum FileType {
 
-    POST_IMAGE("(유저) 인증 이미지", "/post/certification/v1", FileContentType.IMAGE),
+    POST_IMAGE("(유저) 인증 이미지", "mayfill-image/certification/v1/", FileContentType.IMAGE),
     ;
 
     private final String description;
