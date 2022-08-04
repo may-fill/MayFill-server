@@ -25,6 +25,12 @@ public class UserService {
     }
 
     @Transactional
+    public void upgradeUserGrade(Long userId, int count) {
+        User user = UserServiceUtils.findUserById(userRepository, userId);
+        user.changeGrade(count);
+    }
+
+    @Transactional
     public void resignUser(Long userId) {
         userRepository.delete(UserServiceUtils.findUserById(userRepository, userId));
     }
