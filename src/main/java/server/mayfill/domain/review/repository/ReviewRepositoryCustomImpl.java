@@ -22,4 +22,12 @@ public class ReviewRepositoryCustomImpl implements ReviewRepositoryCustom {
                 .fetch();
     }
 
+    @Override
+    public Review findByUserId(Long userId) {
+        return query
+                .selectFrom(review)
+                .where(review.user.id.eq(userId))
+                .fetchOne();
+    }
+
 }

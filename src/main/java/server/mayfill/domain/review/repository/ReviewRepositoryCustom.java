@@ -7,5 +7,6 @@ import java.util.List;
 public interface ReviewRepositoryCustom {
 
     List<Review> findAllReviewByStoreId(Long storeId);
+    Review findByUserId(Long userId);
 
 }

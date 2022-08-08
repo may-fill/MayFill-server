@@ -11,7 +11,6 @@ import javax.validation.constraints.NotNull;
 @ToString
 @Getter
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-@AllArgsConstructor(access = AccessLevel.PRIVATE)
 public class AddReviewRequestDto {
 
     @NotNull(message = "${review.storeId.notNull}")
@@ -22,6 +21,12 @@ public class AddReviewRequestDto {
 
     public Review toEntity(Store store, User user) {
         return Review.of(store, user, comments);
+    }
+
+    @Builder(builderMethodName = "testBuilder", access = AccessLevel.PUBLIC)
+    public AddReviewRequestDto(Long storeId, String comments) {
+        this.storeId = storeId;
+        this.comments = comments;
     }
 
 }
