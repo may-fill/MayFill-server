@@ -26,6 +26,7 @@ public enum ResponseResult {
     SUCCESS_CREATED_UPDATE_NICKNAME(CREATED, "닉네임이 수정되었습니다"),
     SUCCESS_CREATED_STORE(CREATED, "새로운 리필 스테이션이 등록되었습니다"),
     SUCCESS_CREATED_CERTIFICATION_POST(CREATED, "새로운 인증 포스트가 등록되었습니다"),
+    SUCCESS_CREATED_UPDATE_STORE(CREATED, "리필 스테이션 정보가 수정되었습니다"),
 
     // 202 ACCEPTED
     SUCCESS_ACCEPTED(ACCEPTED, ""),
@@ -62,6 +63,8 @@ public enum ResponseResult {
 
     // 409 CONFLICT
     CONFLICT_EXCEPTION(CONFLICT, "이미 존재합니다"),
+    CONFLICT_ALREADY_EXIST_USER_EXCEPTION(CONFLICT, "이미 존재하는 유저입니다"),
+    CONFLICT_ALREADY_EXIST_STORE_EXCEPTION(CONFLICT, "이미 존재하는 리필스테이션입니다"),
 
     // 415 Unsupported Media Type
     UNSUPPORTED_MEDIA_TYPE_EXCEPTION(UNSUPPORTED_MEDIA_TYPE, "해당하는 미디어 타입을 지원하지 않습니다."),

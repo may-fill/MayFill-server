@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 import server.mayfill.config.security.JwtConstants;
-import server.mayfill.service.auth.dto.response.TokenResponseDto;
+import server.mayfill.app.auth.dto.response.TokenResponse;
 
 import java.security.Key;
 import java.util.Date;
@@ -29,7 +29,7 @@ public class JwtUtils {
         this.secretKey = Keys.hmacShaKeyFor(keyBytes);
     }
 
-    public TokenResponseDto createTokenByUserId(Long userId) {
+    public TokenResponse createTokenByUserId(Long userId) {
         long now = (new Date()).getTime();
         Date accessTokenExpiresIn = new Date(now + ACCESS_TOKEN_EXPIRES_TIME);
         Date refreshTokenExpiresIn = new Date(now + REFRESH_TOKEN_EXPIRES_TIME);
@@ -46,7 +46,7 @@ public class JwtUtils {
                 .signWith(secretKey, SignatureAlgorithm.HS512)
                 .compact();
 
-        return TokenResponseDto.of(accessToken, refreshToken);
+        return TokenResponse.of(accessToken, refreshToken);
     }
 
     public boolean validateToken(String token) {

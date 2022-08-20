@@ -1,4 +1,4 @@
-package server.mayfill.controller.advice;
+package server.mayfill.common.advice;
 
 import com.fasterxml.jackson.databind.exc.InvalidFormatException;
 import lombok.extern.slf4j.Slf4j;

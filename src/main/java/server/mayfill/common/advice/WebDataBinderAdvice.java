@@ -1,4 +1,4 @@
-package server.mayfill.controller.advice;
+package server.mayfill.common.advice;
 
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
