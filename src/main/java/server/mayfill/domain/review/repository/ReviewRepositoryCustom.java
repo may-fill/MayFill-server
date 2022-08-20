@@ -5,7 +5,5 @@ import server.mayfill.domain.review.Review;
 import java.util.List;
 
 public interface ReviewRepositoryCustom {
-
     List<Review> findAllReviewByStoreId(Long storeId);
-
 }

@@ -5,7 +5,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import server.mayfill.domain.common.AuditingTimeEntity;
-import server.mayfill.domain.user.User;
+import server.mayfill.domain.user.entity.User;
 
 import javax.persistence.*;
 
