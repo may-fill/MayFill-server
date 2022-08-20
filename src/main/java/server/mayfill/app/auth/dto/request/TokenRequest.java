@@ -1,4 +1,4 @@
-package server.mayfill.controller.auth.dto.request;
+package server.mayfill.app.auth.dto.request;
 
 import lombok.*;
 

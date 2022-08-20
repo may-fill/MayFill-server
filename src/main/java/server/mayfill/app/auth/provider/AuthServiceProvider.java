@@ -1,8 +1,9 @@
-package server.mayfill.app.auth.service;
+package server.mayfill.app.auth.provider;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
-import server.mayfill.domain.user.enumerate.SocialType;
+import server.mayfill.app.auth.service.AuthService;
+import server.mayfill.domain.user.entity.enumerate.SocialType;
 import server.mayfill.app.auth.service.impl.AppleAuthService;
 import server.mayfill.app.auth.service.impl.KakaoAuthService;
 

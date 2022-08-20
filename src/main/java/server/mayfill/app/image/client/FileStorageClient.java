@@ -1,4 +1,4 @@
-package server.mayfill.service.image.client;
+package server.mayfill.app.image.client;
 
 import org.springframework.web.multipart.MultipartFile;
 

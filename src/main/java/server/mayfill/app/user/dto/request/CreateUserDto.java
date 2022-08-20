@@ -1,7 +1,7 @@
-package server.mayfill.service.user.dto.request;
+package server.mayfill.app.user.dto.request;
 
 import lombok.*;
-import server.mayfill.domain.user.enumerate.SocialType;
+import server.mayfill.domain.user.entity.enumerate.SocialType;
 
 @ToString
 @Getter

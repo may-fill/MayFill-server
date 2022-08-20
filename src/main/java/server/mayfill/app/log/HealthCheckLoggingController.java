@@ -1,4 +1,4 @@
-package server.mayfill.controller.log;
+package server.mayfill.app.log;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;

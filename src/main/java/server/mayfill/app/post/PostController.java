@@ -1,4 +1,4 @@
-package server.mayfill.controller.post;
+package server.mayfill.app.post;
 
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
@@ -7,11 +7,10 @@ import org.springframework.web.multipart.MultipartFile;
 import server.mayfill.common.dto.ApiResponse;
 import server.mayfill.config.interceptor.Auth;
 import server.mayfill.config.resolver.LoginUserId;
-import server.mayfill.controller.post.dto.request.AddPostRequest;
-import server.mayfill.service.post.PostService;
-import server.mayfill.service.post.dto.response.AllPostResponse;
-import server.mayfill.service.post.dto.response.GradeResponse;
-import server.mayfill.service.post.dto.response.MyPostResponse;
+import server.mayfill.app.post.dto.request.AddPostRequest;
+import server.mayfill.app.post.dto.response.AllPostResponse;
+import server.mayfill.app.post.dto.response.GradeResponse;
+import server.mayfill.app.post.dto.response.MyPostResponse;
 import springfox.documentation.annotations.ApiIgnore;
 
 import javax.validation.Valid;

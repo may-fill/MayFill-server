@@ -1,8 +1,7 @@
-package server.mayfill.controller.auth.dto.response;
+package server.mayfill.app.auth.dto.response;
 
 import lombok.*;
-import server.mayfill.domain.user.User;
-import server.mayfill.service.auth.dto.response.TokenResponseDto;
+import server.mayfill.domain.user.entity.User;
 
 @ToString
 @Getter
@@ -15,7 +14,7 @@ public class LoginResponse {
     private String accessToken;
     private String refreshToken;
 
-    public static LoginResponse of(User user, TokenResponseDto token) {
+    public static LoginResponse of(User user, TokenResponse token) {
         return new LoginResponse(user.getId(), user.getNickname(), token.getAccessToken(), token.getRefreshToken());
     }
 

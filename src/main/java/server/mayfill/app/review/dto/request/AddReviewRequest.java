@@ -2,8 +2,8 @@ package server.mayfill.app.review.dto.request;
 
 import lombok.*;
 import server.mayfill.domain.review.Review;
-import server.mayfill.domain.store.Store;
-import server.mayfill.domain.user.User;
+import server.mayfill.domain.store.entity.Store;
+import server.mayfill.domain.user.entity.User;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -12,7 +12,7 @@ import javax.validation.constraints.NotNull;
 @Getter
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
-public class AddReviewRequestDto {
+public class AddReviewRequest {
 
     @NotNull(message = "${review.storeId.notNull}")
     private Long storeId;

@@ -1,4 +1,4 @@
-package server.mayfill.service.auth.dto.response;
+package server.mayfill.app.auth.dto.response;
 
 import lombok.*;
 
@@ -6,13 +6,13 @@ import lombok.*;
 @Getter
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
-public class TokenResponseDto {
+public class TokenResponse {
 
     private String accessToken;
     private String refreshToken;
 
-    public static TokenResponseDto of(String accessToken, String refreshToken) {
-        return new TokenResponseDto(accessToken, refreshToken);
+    public static TokenResponse of(String accessToken, String refreshToken) {
+        return new TokenResponse(accessToken, refreshToken);
     }
 
 }

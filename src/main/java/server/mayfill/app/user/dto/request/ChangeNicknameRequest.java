@@ -1,4 +1,4 @@
-package server.mayfill.controller.user.dto.request;
+package server.mayfill.app.user.dto.request;
 
 import lombok.*;
 
@@ -6,11 +6,19 @@ import javax.validation.constraints.NotBlank;
 
 @ToString
 @Getter
-@NoArgsConstructor(access = AccessLevel.PRIVATE)
-@AllArgsConstructor(access = AccessLevel.PRIVATE)
 public class ChangeNicknameRequest {
 
     @NotBlank(message = "${user.nickname.notBlank}")
     private String nickname;
+
+    private ChangeNicknameRequest() {}
+
+    private ChangeNicknameRequest(String nickname) {
+        this.nickname = nickname;
+    }
+
+    public static ChangeNicknameRequest fromTest(String nickname) {
+        return new ChangeNicknameRequest(nickname);
+    }
 
 }

@@ -1,7 +1,7 @@
-package server.mayfill.service.post.dto.response;
+package server.mayfill.app.post.dto.response;
 
 import lombok.*;
-import server.mayfill.domain.user.enumerate.UserGrade;
+import server.mayfill.domain.user.entity.enumerate.UserGrade;
 
 @ToString
 @Getter

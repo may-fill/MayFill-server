@@ -1,4 +1,4 @@
-package server.mayfill.service.image.provider.dto.request;
+package server.mayfill.app.image.provider.dto.request;
 
 import lombok.*;
 import server.mayfill.common.type.FileType;

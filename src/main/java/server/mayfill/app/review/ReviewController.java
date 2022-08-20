@@ -1,4 +1,4 @@
-package server.mayfill.controller.review;
+package server.mayfill.app.review;
 
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
@@ -7,9 +7,8 @@ import server.mayfill.common.dto.ApiResponse;
 import server.mayfill.common.exception.ResponseResult;
 import server.mayfill.config.interceptor.Auth;
 import server.mayfill.config.resolver.LoginUserId;
-import server.mayfill.service.review.ReviewService;
-import server.mayfill.service.review.dto.request.AddReviewRequestDto;
-import server.mayfill.service.review.dto.response.ReviewResponse;
+import server.mayfill.app.review.dto.request.AddReviewRequest;
+import server.mayfill.app.review.dto.response.ReviewResponse;
 import springfox.documentation.annotations.ApiIgnore;
 
 import javax.validation.Valid;
@@ -24,7 +23,7 @@ public class ReviewController {
     @ApiOperation("[인증] 리필 스테이션 상세보기 페이지 - 후기 등록")
     @Auth
     @PostMapping("/v1/store/review")
-    public ApiResponse<ResponseResult> addReview(@Valid @RequestBody AddReviewRequestDto request, @ApiIgnore @LoginUserId Long userId) {
+    public ApiResponse<ResponseResult> addReview(@Valid @RequestBody AddReviewRequest request, @ApiIgnore @LoginUserId Long userId) {
         reviewService.addReview(request, userId);
         return ApiResponse.success(ResponseResult.SUCCESS_CREATED_REVIEW_COMMENT);
     }

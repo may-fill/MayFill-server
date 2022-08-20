@@ -1,4 +1,4 @@
-package server.mayfill.service.image.client;
+package server.mayfill.app.image.client;
 
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.model.CannedAccessControlList;

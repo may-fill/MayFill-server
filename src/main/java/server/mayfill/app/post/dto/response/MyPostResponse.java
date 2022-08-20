@@ -1,4 +1,4 @@
-package server.mayfill.service.post.dto.response;
+package server.mayfill.app.post.dto.response;
 
 import lombok.*;
 import server.mayfill.common.dto.AuditingTimeResponse;

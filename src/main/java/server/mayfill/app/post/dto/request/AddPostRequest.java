@@ -1,8 +1,8 @@
-package server.mayfill.controller.post.dto.request;
+package server.mayfill.app.post.dto.request;
 
 import lombok.*;
 import server.mayfill.domain.post.Post;
-import server.mayfill.domain.user.User;
+import server.mayfill.domain.user.entity.User;
 
 import javax.validation.constraints.NotBlank;
 

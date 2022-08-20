@@ -1,8 +1,8 @@
-package server.mayfill.service.auth.dto.request;
+package server.mayfill.app.auth.dto.request;
 
 import lombok.*;
-import server.mayfill.domain.user.enumerate.SocialType;
-import server.mayfill.service.user.dto.request.CreateUserDto;
+import server.mayfill.domain.user.entity.enumerate.SocialType;
+import server.mayfill.app.user.dto.request.CreateUserDto;
 
 @ToString
 @Getter

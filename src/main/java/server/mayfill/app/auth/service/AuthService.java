@@ -1,7 +1,7 @@
-package server.mayfill.service.auth;
+package server.mayfill.app.auth.service;
 
-import server.mayfill.domain.user.User;
-import server.mayfill.service.auth.dto.request.LoginDto;
+import server.mayfill.domain.user.entity.User;
+import server.mayfill.app.auth.dto.request.LoginDto;
 
 public interface AuthService {
     User socialLogin(LoginDto request);

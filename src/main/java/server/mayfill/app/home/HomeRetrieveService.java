@@ -1,12 +1,12 @@
-package server.mayfill.service.home;
+package server.mayfill.app.home;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import server.mayfill.domain.store.repository.StoreRepository;
-import server.mayfill.service.home.dto.response.AllStoreResponse;
-import server.mayfill.service.home.dto.response.OneStoreResponse;
-import server.mayfill.service.store.StoreServiceUtils;
+import server.mayfill.app.home.dto.response.AllStoreResponse;
+import server.mayfill.app.home.dto.response.OneStoreResponse;
+import server.mayfill.app.store.service.StoreServiceUtils;
 
 import java.util.List;
 import java.util.stream.Collectors;

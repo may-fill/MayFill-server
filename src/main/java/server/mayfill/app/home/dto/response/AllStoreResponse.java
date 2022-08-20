@@ -1,8 +1,8 @@
-package server.mayfill.service.home.dto.response;
+package server.mayfill.app.home.dto.response;
 
 import lombok.*;
-import server.mayfill.domain.store.Store;
-import server.mayfill.domain.store.embedded.Coordinate;
+import server.mayfill.domain.store.entity.Store;
+import server.mayfill.domain.store.entity.embedded.Coordinate;
 
 @ToString
 @Getter

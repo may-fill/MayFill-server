@@ -1,16 +1,16 @@
-package server.mayfill.service.auth.impl;
+package server.mayfill.app.auth.service.impl;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import server.mayfill.common.util.RandomNicknameProviderUtils;
-import server.mayfill.domain.user.User;
-import server.mayfill.domain.user.enumerate.SocialType;
+import server.mayfill.domain.user.entity.User;
+import server.mayfill.domain.user.entity.enumerate.SocialType;
 import server.mayfill.domain.user.repository.UserRepository;
 import server.mayfill.external.client.apple.AppleTokenDecoder;
-import server.mayfill.service.auth.AuthService;
-import server.mayfill.service.auth.dto.request.LoginDto;
-import server.mayfill.service.user.UserService;
-import server.mayfill.service.user.UserServiceUtils;
+import server.mayfill.app.auth.service.AuthService;
+import server.mayfill.app.auth.dto.request.LoginDto;
+import server.mayfill.app.user.service.UserService;
+import server.mayfill.app.user.service.UserServiceUtils;
 
 @Service
 @RequiredArgsConstructor

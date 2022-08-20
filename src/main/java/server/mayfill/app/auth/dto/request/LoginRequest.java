@@ -1,8 +1,7 @@
-package server.mayfill.controller.auth.dto.request;
+package server.mayfill.app.auth.dto.request;
 
 import lombok.*;
-import server.mayfill.domain.user.enumerate.SocialType;
-import server.mayfill.service.auth.dto.request.LoginDto;
+import server.mayfill.domain.user.entity.enumerate.SocialType;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;

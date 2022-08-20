@@ -1,11 +1,11 @@
-package server.mayfill.service.user;
+package server.mayfill.app.user.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import server.mayfill.domain.user.User;
+import server.mayfill.domain.user.entity.User;
 import server.mayfill.domain.user.repository.UserRepository;
-import server.mayfill.service.user.dto.request.CreateUserDto;
+import server.mayfill.app.user.dto.request.CreateUserDto;
 
 @Service
 @RequiredArgsConstructor
@@ -15,7 +15,8 @@ public class UserService {
 
     @Transactional
     public User registerUser(CreateUserDto request) {
-        return userRepository.save(User.newInstance(request.getSocialId(), request.getSocialType(), request.getNickname()));
+        UserServiceUtils.validateNotExistsUser(userRepository, request.getSocialId(), request.getSocialType());
+        return userRepository.save(User.newInstance(request));
     }
 
     @Transactional

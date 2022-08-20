@@ -1,4 +1,4 @@
-package server.mayfill.controller.home;
+package server.mayfill.app.home;
 
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
@@ -8,9 +8,8 @@ import org.springframework.web.bind.annotation.RestController;
 import server.mayfill.common.dto.ApiResponse;
 import server.mayfill.common.exception.ResponseResult;
 import server.mayfill.config.interceptor.Auth;
-import server.mayfill.service.home.HomeRetrieveService;
-import server.mayfill.service.home.dto.response.AllStoreResponse;
-import server.mayfill.service.home.dto.response.OneStoreResponse;
+import server.mayfill.app.home.dto.response.AllStoreResponse;
+import server.mayfill.app.home.dto.response.OneStoreResponse;
 
 import java.util.List;
 
