@@ -1,4 +1,4 @@
-package server.mayfill.domain.store.embedded;
+package server.mayfill.domain.store.entity.embedded;
 
 import lombok.*;
 
