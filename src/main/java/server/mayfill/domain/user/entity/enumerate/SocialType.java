@@ -1,4 +1,4 @@
-package server.mayfill.domain.user.enumerate;
+package server.mayfill.domain.user.entity.enumerate;
 
 import lombok.AccessLevel;
 import lombok.Getter;

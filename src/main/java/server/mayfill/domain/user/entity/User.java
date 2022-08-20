@@ -1,14 +1,15 @@
-package server.mayfill.domain.user;
+package server.mayfill.domain.user.entity;
 
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import server.mayfill.app.user.dto.request.CreateUserDto;
 import server.mayfill.domain.common.AuditingTimeEntity;
 import server.mayfill.domain.post.Post;
-import server.mayfill.domain.user.embedded.SocialInfo;
-import server.mayfill.domain.user.enumerate.SocialType;
-import server.mayfill.domain.user.enumerate.UserGrade;
-import server.mayfill.domain.user.enumerate.UserStatus;
+import server.mayfill.domain.user.entity.embedded.SocialInfo;
+import server.mayfill.domain.user.entity.enumerate.SocialType;
+import server.mayfill.domain.user.entity.enumerate.UserGrade;
+import server.mayfill.domain.user.entity.enumerate.UserStatus;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -48,8 +49,8 @@ public class User extends AuditingTimeEntity {
         this.grade = UserGrade.SQUIRE;
     }
 
-    public static User newInstance(String socialId, SocialType socialType, String nickname) {
-        return new User(socialId, socialType, nickname);
+    public static User newInstance(CreateUserDto requestDto) {
+        return new User(requestDto.getSocialId(), requestDto.getSocialType(), requestDto.getNickname());
     }
 
     public void addPosts(Post post) {
