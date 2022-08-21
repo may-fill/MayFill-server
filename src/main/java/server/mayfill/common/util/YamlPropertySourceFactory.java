@@ -1,5 +1,6 @@
 package server.mayfill.common.util;
 
+import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.config.YamlPropertiesFactoryBean;
 import org.springframework.core.env.PropertiesPropertySource;
 import org.springframework.core.env.PropertySource;
@@ -12,12 +13,14 @@ import java.util.Properties;
 
 public class YamlPropertySourceFactory implements PropertySourceFactory {
 
+    @NotNull
     @Override
-    public PropertySource<?> createPropertySource(String name, EncodedResource resource) throws IOException {
+    public PropertySource<?> createPropertySource(String name, @NotNull EncodedResource resource) throws IOException {
         Properties propertiesFromYaml = loadYmlIntoProperties(resource);
         String sourceName = name != null ?
                 name :
                 resource.getResource().getFilename();
+        assert sourceName != null;
         return new PropertiesPropertySource(sourceName, propertiesFromYaml);
     }
 

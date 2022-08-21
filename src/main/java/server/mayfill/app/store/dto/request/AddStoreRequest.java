@@ -33,17 +33,17 @@ public class AddStoreRequest {
     private String webSite;
 
     @NotBlank(message = "{store.xCoordinate.notBlank}")
-    private String xCoordinate;
+    private double xCoordinate;
 
     @NotBlank(message = "{store.yCoordinate.notBlank}")
-    private String yCoordinate;
+    private double yCoordinate;
 
     @NotNull(message = "{store.tags.notNull}")
     private Set<TagName> tags;
 
     @Builder(builderMethodName = "testBuilder", access = AccessLevel.PUBLIC)
     public AddStoreRequest(String name, String roadAddress, String detail, String description, String phoneNumber,
-                           String webSite, String xCoordinate, String yCoordinate,  Set<TagName> tags) {
+                           String webSite, double xCoordinate, double yCoordinate,  Set<TagName> tags) {
         this.name = name;
         this.roadAddress = roadAddress;
         this.detail = detail;

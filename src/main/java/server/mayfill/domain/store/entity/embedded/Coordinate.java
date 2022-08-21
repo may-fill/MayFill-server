@@ -11,10 +11,10 @@ import javax.persistence.Embeddable;
 @Embeddable
 public class Coordinate {
 
-    private String xCoordinate;
-    private String yCoordinate;
+    private double xCoordinate;
+    private double yCoordinate;
 
-    public static Coordinate of(String xCoordinate, String yCoordinate) {
+    public static Coordinate of(double xCoordinate, double yCoordinate) {
         return new Coordinate(xCoordinate, yCoordinate);
     }
 

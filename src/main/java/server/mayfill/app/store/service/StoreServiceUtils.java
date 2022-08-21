@@ -19,7 +19,7 @@ public class StoreServiceUtils {
         }
     }
 
-    public static void validateExistsStore(StoreRepository storeRepository, String  xCoordinate, String yCoordinate) {
+    public static void validateExistsStore(StoreRepository storeRepository, double  xCoordinate, double yCoordinate) {
         if (storeRepository.existsByCoordinate(Coordinate.of(xCoordinate, yCoordinate))) {
             throw new ConflictException("이미 존재하는 리필스테이션 입니다", CONFLICT_ALREADY_EXIST_STORE_EXCEPTION);
         }
