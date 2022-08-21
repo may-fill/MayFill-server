@@ -44,9 +44,9 @@ public class AppleTokenDecoderImpl implements AppleTokenDecoder {
                     .getBody();
             return claims.getSubject();
         } catch (ExpiredJwtException e) {
-            throw new ValidationException(String.format("만료된 애플 idToken (%s) 입니다 (reason: %s)", idToken, e.getMessage(), ResponseResult.VALIDATION_AUTH_TOKEN_EXCEPTION));
+            throw new ValidationException(String.format("만료된 애플 idToken (%s) 입니다 (reason: %s)", idToken, e.getMessage()), ResponseResult.VALIDATION_AUTH_TOKEN_EXCEPTION);
         } catch (JsonProcessingException | InvalidKeySpecException | InvalidClaimException | NoSuchAlgorithmException | IllegalArgumentException e) {
-            throw new ValidationException(String.format("잘못된 애플 idToken (%s) 입니다 (reason: %s)", idToken, e.getMessage(), ResponseResult.VALIDATION_AUTH_TOKEN_EXCEPTION));
+            throw new ValidationException(String.format("잘못된 애플 idToken (%s) 입니다 (reason: %s)", idToken, e.getMessage()), ResponseResult.VALIDATION_AUTH_TOKEN_EXCEPTION);
         }
     }
 
