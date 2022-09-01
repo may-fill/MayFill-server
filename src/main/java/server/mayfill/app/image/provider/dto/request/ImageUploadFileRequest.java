@@ -14,7 +14,7 @@ public class ImageUploadFileRequest implements UploadFileRequest {
 
     private FileType type;
 
-    public static ImageUploadFileRequest of(FileType type) {
+    public static ImageUploadFileRequest from(FileType type) {
         return new ImageUploadFileRequest(type);
     }
 
