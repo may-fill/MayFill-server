@@ -26,7 +26,7 @@ public class StoreService {
     @Transactional
     public void registerStoreWithImage(AddStoreRequest request, MultipartFile imageFile) {
         StoreServiceUtils.validateExistsStore(storeRepository, request.getXCoordinate(), request.getYCoordinate());
-        String imageUrl = uploadProvider.uploadFile(ImageUploadFileRequest.of(FileType.STORE_IMAGE), imageFile);
+        String imageUrl = uploadProvider.uploadFile(ImageUploadFileRequest.from(FileType.STORE_IMAGE), imageFile);
         Store store = storeRepository.save(request.toStoreEntity(imageUrl));
         store.addTags(tagRepository.findByTagName(request.getTags()));
     }
@@ -37,7 +37,7 @@ public class StoreService {
         // TODO : store 전체적인 정보 수정
         store.updateTags(tagRepository.findByTagName(request.getTags()));
         if (!Objects.isNull(imageFile) && !imageFile.isEmpty()) { // imageFile 이 있으면
-            String imageUrl = uploadProvider.uploadFile(ImageUploadFileRequest.of(FileType.STORE_IMAGE), imageFile);
+            String imageUrl = uploadProvider.uploadFile(ImageUploadFileRequest.from(FileType.STORE_IMAGE), imageFile);
             store.updateImageUrl(imageUrl);
         }
     }

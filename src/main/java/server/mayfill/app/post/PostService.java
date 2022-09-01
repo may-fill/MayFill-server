@@ -30,7 +30,7 @@ public class PostService {
 
     @Transactional
     public GradeResponse addPostWithImage(AddPostRequest request, MultipartFile imageFile, Long userId) {
-        String imageUrl = uploadProvider.uploadFile(ImageUploadFileRequest.of(FileType.POST_IMAGE), imageFile);
+        String imageUrl = uploadProvider.uploadFile(ImageUploadFileRequest.from(FileType.POST_IMAGE), imageFile);
         User user = UserServiceUtils.findUserById(userRepository, userId);
         user.addPosts(postRepository.save(request.toPostEntity(user, imageUrl)));
         user.changeGrade(user.getPosts().size() - 1);
