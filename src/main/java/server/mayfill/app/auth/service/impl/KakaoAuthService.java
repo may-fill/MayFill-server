@@ -18,7 +18,7 @@ import server.mayfill.app.user.service.UserServiceUtils;
 @RequiredArgsConstructor
 public class KakaoAuthService implements AuthService {
 
-    private static final SocialType SOCIAL_TYPE = SocialType.KAKAO;
+    private static final SocialType KAKAO_TYPE = SocialType.KAKAO;
 
     private final KakaoApiClient kakaoApiCaller;
     private final UserService userService;
@@ -27,7 +27,7 @@ public class KakaoAuthService implements AuthService {
     @Override
     public User socialLogin(LoginDto request) {
         KakaoAuthResponse response = kakaoApiCaller.getKakaoUserProfile(HttpHeaderUtils.withBearerToken(request.getSocialAccessToken()));
-        User user = UserServiceUtils.findUserBySocialIdAndSocialType(userRepository, response.getId(), SOCIAL_TYPE);
+        User user = UserServiceUtils.findUserBySocialIdAndSocialType(userRepository, response.getId(), KAKAO_TYPE);
         if (user == null) { // 없으면 회원가입
             return userService.registerUser(request.toCreateUserDto(response.getId(), RandomNicknameProviderUtils.getRandomNickname()));
         }

@@ -16,7 +16,7 @@ import server.mayfill.app.user.service.UserServiceUtils;
 @RequiredArgsConstructor
 public class AppleAuthService implements AuthService {
 
-    private static final SocialType SOCIAL_TYPE = SocialType.APPLE;
+    private static final SocialType APPLE_TYPE = SocialType.APPLE;
 
     private final AppleTokenDecoder appleTokenDecoder;
     private final UserService userService;
@@ -25,7 +25,7 @@ public class AppleAuthService implements AuthService {
     @Override
     public User socialLogin(LoginDto request) {
         String socialId = appleTokenDecoder.getSocialIdFromIdToken(request.getSocialAccessToken());
-        User user = UserServiceUtils.findUserBySocialIdAndSocialType(userRepository, socialId, SOCIAL_TYPE);
+        User user = UserServiceUtils.findUserBySocialIdAndSocialType(userRepository, socialId, APPLE_TYPE);
         if (user == null) {
             return userService.registerUser(request.toCreateUserDto(socialId, RandomNicknameProviderUtils.getRandomNickname()));
         }
