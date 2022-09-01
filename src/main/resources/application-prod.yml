@@ -13,7 +13,7 @@ spring:
 
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://mayfill.cyy1hxjw52fe.ap-northeast-2.rds.amazonaws.com:3306/mayfill?useSSL=false&useUnicode=true&serverTimezone=Asia/Seoul
+    url: jdbc:mysql://mysql.cyy1hxjw52fe.ap-northeast-2.rds.amazonaws.com:3306/mayfill?useSSL=false&useUnicode=true&serverTimezone=Asia/Seoul
     username: mayfill_admin
     password: mayfill_password
 
