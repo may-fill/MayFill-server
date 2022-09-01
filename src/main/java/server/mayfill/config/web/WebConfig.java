@@ -1,4 +1,4 @@
-package server.mayfill.config;
+package server.mayfill.config.web;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
