@@ -32,7 +32,7 @@
 //    @Test
 //    void 유저_등록_성공() {
 //        // given
-//        CreateUserDto createUserDto = CreateUserDto.of("채울지도", "소셜ID", SocialType.KAKAO);
+//        CreateUserDto createUserDto = CreateUserDto.of("채울지도", "SocialId", SocialType.KAKAO);
 //        // when
 //        User saved = userService.registerUser(createUserDto);
 //        // then
@@ -50,7 +50,7 @@
 //    @Test
 //    void 이미_존재하는_유저_등록_시_실패() {
 //        // given
-//        CreateUserDto createUserDto = CreateUserDto.of("채울지도", "소셜ID", SocialType.KAKAO);
+//        CreateUserDto createUserDto = CreateUserDto.of("채울지도", "SocialId", SocialType.KAKAO);
 //        User saved = userRepository.save(User.newInstance(createUserDto));
 //
 //        // then
@@ -60,7 +60,7 @@
 //    @Test
 //    void 유저_닉네임_변경_성공() {
 //        // given
-//        CreateUserDto createUserDto = CreateUserDto.of("채울지도", "소셜ID", SocialType.KAKAO);
+//        CreateUserDto createUserDto = CreateUserDto.of("채울지도", "SocialId", SocialType.KAKAO);
 //        User saved = userRepository.save(User.newInstance(createUserDto));
 //
 //        ChangeNicknameRequest request = ChangeNicknameRequest.fromTest("안채울지도");
