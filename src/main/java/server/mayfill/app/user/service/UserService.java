@@ -3,6 +3,7 @@ package server.mayfill.app.user.service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import server.mayfill.app.user.dto.response.UserInfoResponse;
 import server.mayfill.domain.user.entity.User;
 import server.mayfill.domain.user.repository.UserRepository;
 import server.mayfill.app.user.dto.request.CreateUserDto;
@@ -34,6 +35,11 @@ public class UserService {
     @Transactional
     public void resignUser(Long userId) {
         userRepository.delete(UserServiceUtils.findUserById(userRepository, userId));
+    }
+
+    public UserInfoResponse retrieveUserInfo(Long userId) {
+        User user = UserServiceUtils.findUserById(userRepository, userId);
+        return UserInfoResponse.of(user.getNickname(), user.getGrade());
     }
 
 }
