@@ -24,7 +24,10 @@ public class StoreRepositoryCustomImpl implements StoreRepositoryCustom {
 
     @Override
     public List<Store> findAllStore() {
-        return query.selectFrom(store).fetch();
+        return query
+                .selectFrom(store)
+                .orderBy(store.id.asc())
+                .fetch();
     }
 
     @Override
