@@ -2,6 +2,7 @@ package server.mayfill.app.store;
 
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
+import org.jetbrains.annotations.Nullable;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import server.mayfill.app.store.dto.request.UpdateStoreTagsRequest;
@@ -33,14 +34,15 @@ public class StoreController {
     @ApiOperation("[인증] 리필 스테이션 등록 페이지 - 리필 스테이션 등록하기")
     @Auth
     @PostMapping("/v1/store/new")
-    public ApiResponse<ResponseResult> addStore(@Valid @RequestBody AddStoreRequest request, @RequestPart MultipartFile imageFile) {
+    public ApiResponse<ResponseResult> addStore(@Valid AddStoreRequest request, @RequestPart MultipartFile imageFile) {
         storeService.registerStoreWithImage(request, imageFile);
         return ApiResponse.success(ResponseResult.SUCCESS_CREATED_STORE);
     }
 
     @ApiOperation("리필 스테이션 등록 페이지 - 리필 스테이션 정보 수정")
     @PatchMapping("/v1/store")
-    public ApiResponse<ResponseResult> updateStoreTags(@Valid @RequestBody UpdateStoreTagsRequest request, @RequestPart MultipartFile imageFile) {
+    public ApiResponse<ResponseResult> updateStoreTags(@Valid UpdateStoreTagsRequest request, @RequestPart MultipartFile imageFile) {
+        // FIXME : 전체적인 store 정보 수정
         storeService.updateStore(request, imageFile);
         return ApiResponse.success(ResponseResult.SUCCESS_CREATED_UPDATE_STORE);
     }
