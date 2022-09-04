@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface ReviewRepositoryCustom {
     List<Review> findAllReviewByStoreId(Long storeId);
+    Review findOneReviewByStoreIdAndUserIdForTest(Long storeId, Long userId);
 }
