@@ -26,7 +26,7 @@ public class AllStoreResponse {
         this.coordinate = coordinate;
     }
 
-    public static AllStoreResponse of(Store store) {
+    public static AllStoreResponse from(Store store) {
         return AllStoreResponse.builder()
                 .storeId(store.getId())
                 .storeName(store.getName())

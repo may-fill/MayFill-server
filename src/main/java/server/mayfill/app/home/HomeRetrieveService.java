@@ -21,13 +21,13 @@ public class HomeRetrieveService {
     public List<AllStoreResponse> retrieveAllStore() {
         return storeRepository.findAllStore()
                 .stream()
-                .map(AllStoreResponse::of)
+                .map(AllStoreResponse::from)
                 .collect(Collectors.toList());
     }
 
     public OneStoreResponse retrieveOneStore(Long storeId) {
         StoreServiceUtils.validateNotExistsStore(storeRepository, storeId);
-        return OneStoreResponse.of(storeRepository.findStoreByStoreId(storeId));
+        return OneStoreResponse.from(storeRepository.findStoreByStoreId(storeId));
     }
 
 }

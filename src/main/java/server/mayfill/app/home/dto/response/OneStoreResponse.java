@@ -19,19 +19,21 @@ public class OneStoreResponse {
     private String phoneNumber;
     private String webSite;
     private String description;
+    private String imageUrl;
     private List<String> tags = new ArrayList<>();
 
     @Builder(access = AccessLevel.PACKAGE)
-    private OneStoreResponse(Long storeId, String storeName, String address, String phoneNumber, String webSite, String description) {
+    private OneStoreResponse(Long storeId, String storeName, String address, String phoneNumber, String webSite, String description, String imageUrl) {
         this.storeId = storeId;
         this.storeName = storeName;
         this.address = address;
         this.phoneNumber = phoneNumber;
         this.webSite = webSite;
         this.description = description;
+        this.imageUrl = imageUrl;
     }
 
-    public static OneStoreResponse of(Store store) {
+    public static OneStoreResponse from(Store store) {
         OneStoreResponse response = OneStoreResponse.builder()
                 .storeId(store.getId())
                 .storeName(store.getName())
@@ -39,6 +41,7 @@ public class OneStoreResponse {
                 .phoneNumber(store.getPhoneNumber())
                 .webSite(store.getWebSite())
                 .description(store.getDescription())
+                .imageUrl(store.getImageUrl())
                 .build();
         response.tags.addAll(store.getStoreTags());
         return response;
