@@ -20,7 +20,7 @@ public class ReviewResponse extends AuditingTimeResponse {
         this.comments = comments;
     }
 
-    public static ReviewResponse of(Review review) {
+    public static ReviewResponse from(Review review) {
         ReviewResponse response = ReviewResponse.builder()
                 .reviewId(review.getId())
                 .nickname(review.getUser().getNickname())

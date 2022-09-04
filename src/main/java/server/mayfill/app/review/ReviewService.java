@@ -31,11 +31,12 @@ public class ReviewService {
         );
     }
 
+    @Transactional
     public List<ReviewResponse> retrieveReview(Long storeId) {
         StoreServiceUtils.validateNotExistsStore(storeRepository, storeId);
         return reviewRepository.findAllReviewByStoreId(storeId)
                 .stream()
-                .map(ReviewResponse::of)
+                .map(ReviewResponse::from)
                 .collect(Collectors.toList());
     }
 
