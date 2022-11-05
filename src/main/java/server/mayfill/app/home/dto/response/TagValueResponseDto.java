@@ -12,7 +12,7 @@ public class TagValueResponseDto {
 
     private TagValueResponseDto() {}
 
-    private TagValueResponseDto(String value) {
+    private TagValueResponseDto(final String value) {
         this.value = value;
     }
 

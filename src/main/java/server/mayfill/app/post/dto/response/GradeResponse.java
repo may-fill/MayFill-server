@@ -14,7 +14,7 @@ public class GradeResponse {
         this.grade = grade;
     }
 
-    public static GradeResponse of(UserGrade grade) {
+    public static GradeResponse from(UserGrade grade) {
         return new GradeResponse(grade);
     }
 

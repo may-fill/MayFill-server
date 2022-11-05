@@ -22,7 +22,7 @@ public class AllPostResponse extends AuditingTimeResponse {
         this.contents = contents;
     }
 
-    public static AllPostResponse of(Post post) {
+    public static AllPostResponse from(Post post) {
         AllPostResponse response = AllPostResponse.builder()
                 .nickname(post.getUser().getNickname())
                 .url(post.getImageUrl())

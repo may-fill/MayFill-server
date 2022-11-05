@@ -14,7 +14,7 @@ public class MyPostResponse extends AuditingTimeResponse {
     private String title;
     private String contents;
 
-    public static MyPostResponse of(Post post) {
+    public static MyPostResponse from(Post post) {
         MyPostResponse response = new MyPostResponse(post.getImageUrl(), post.getTitle(), post.getContents());
         response.setBaseTime(post);
         return response;

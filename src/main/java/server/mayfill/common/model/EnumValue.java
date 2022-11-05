@@ -2,8 +2,8 @@ package server.mayfill.common.model;
 
 public class EnumValue {
 
-    private String key;
-    private String value;
+    private final String key;
+    private final String value;
 
     public EnumValue(EnumModel enumModel) {
         key = enumModel.getKey();

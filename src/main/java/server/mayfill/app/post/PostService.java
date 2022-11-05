@@ -34,15 +34,14 @@ public class PostService {
         User user = UserServiceUtils.findUserById(userRepository, userId);
         user.addPosts(postRepository.save(request.toPostEntity(user, imageUrl)));
         user.changeGrade(user.getPosts().size() - 1);
-        return GradeResponse.of(user.getGrade());
+        return GradeResponse.from(user.getGrade());
     }
 
     @Transactional(readOnly = true)
     public List<MyPostResponse> retrieveMyPost(Long userId) {
         return postRepository
                 .findPostByUserId(userId)
-                .stream()
-                .map(MyPostResponse::of)
+                .stream().map(MyPostResponse::from)
                 .collect(Collectors.toList());
     }
 
@@ -50,7 +49,7 @@ public class PostService {
     public List<AllPostResponse> retrieveAllPost() {
         return postRepository
                 .findAll(Sort.by(Sort.Direction.DESC, "createdAt"))
-                .stream().map(AllPostResponse::of)
+                .stream().map(AllPostResponse::from)
                 .collect(Collectors.toList());
     }
 

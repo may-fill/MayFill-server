@@ -44,4 +44,9 @@ public class S3FileStorageClient implements FileStorageClient {
         return amazonS3.getUrl(bucket, fileName).toString();
     }
 
+    @Override // TODO : 이렇게 삭제하는거 맞는지 확인
+    public void deleteFile(String bucketImageUrl) {
+        amazonS3.deleteObject(bucket, bucketImageUrl);
+    }
+
 }
